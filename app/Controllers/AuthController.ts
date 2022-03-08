@@ -1,15 +1,17 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Login from 'App/Validators/LoginValidator'
 
 export default class AuthController {
   public async login({ auth, request, response }) {
-    const email = request.input('email')
-    const password = request.input('passwor')
+    const payload = await request.validate(Login)
 
     try {
-      const token = await auth.use('api').attempt(email, password)
-      return token
+      const token = await auth.use('api').attempt(payload.email, payload.password)
+      return response.send(token)
     } catch {
-      return response.badRequest('Invalid credentials')
+      return response.status(401).send({
+        message: 'Invalid credential',
+      })
     }
   }
 }

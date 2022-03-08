@@ -21,3 +21,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.resource('users', 'UsersController').apiOnly()
+
+Route.group(() => {
+  Route.post('login', 'AuthController.login')
+}).prefix('/auth')
