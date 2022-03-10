@@ -6,7 +6,9 @@ export default class AuthController {
     const payload = await request.validate(Login)
 
     try {
-      const token = await auth.use('api').attempt(payload.email, payload.password)
+      const token = await auth.use('api').attempt(payload.email, payload.password, {
+        expiresIn: '7days',
+      })
       return response.send(token)
     } catch {
       return response.status(401).send({
