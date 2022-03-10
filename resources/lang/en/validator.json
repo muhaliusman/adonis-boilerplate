@@ -1,12 +1,12 @@
 {
-    "shared": {
-        "minLength": "Field cannot be filled with more than 200 letters",
-      "email.required": "E-mail is required",
-      "email.email": "E-mail is invalid",
-      "email.unique": "E-mail is already in use",
-      "name.required": "Name is required",
-      "password.required": "Password is required",
-      "password.regex": "Password must have a combination of uppercase and lowercase letters and numbers",
-      "password.minLength": "Password cannot be less than {minLength} letters"
-    }
+  "shared": {
+    "minLength": "Field cannot be filled with more than 200 letters",
+    "email.required": "E-mail is required",
+    "email.email": "E-mail is invalid",
+    "email.unique": "E-mail is already in use",
+    "name.required": "Name is required",
+    "password.required": "Password is required",
+    "password.regex": "Password must have a combination of uppercase and lowercase letters and numbers",
+    "password.minLength": "Password cannot be less than {minLength} letters"
+  }
 }
