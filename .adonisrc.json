@@ -22,12 +22,16 @@
     "@adonisjs/core",
     "@adonisjs/lucid",
     "@adonisjs/redis",
-    "@adonisjs/auth"
+    "@adonisjs/auth",
+    "@adonisjs/i18n"
   ],
   "aceProviders": [
     "@adonisjs/repl"
   ],
   "namespaces": {
     "httpControllers": "App/Controllers"
-  }
+  },
+  "metaFiles": [
+    "resources/lang/**/*.(json|yaml)"
+  ]
 }
