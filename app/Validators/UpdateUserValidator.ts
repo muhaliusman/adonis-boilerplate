@@ -24,7 +24,7 @@ export default class UpdateUserValidator {
    *    ```
    */
   public schema = schema.create({
-    email: schema.string({}, [
+    email: schema.string.optional({}, [
       rules.email(),
       rules.unique({
         table: 'users',
@@ -34,7 +34,7 @@ export default class UpdateUserValidator {
         },
       }),
     ]),
-    name: schema.string(
+    name: schema.string.optional(
       {
         escape: true,
         trim: true,
@@ -46,6 +46,9 @@ export default class UpdateUserValidator {
       rules.maxLength(200),
       rules.regex(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
     ]),
+    role: schema.enum.optional(['administrator', 'manager', 'investor'] as const),
+    disabled: schema.boolean.optional(),
+    language: schema.string.optional(),
   })
 
   /**

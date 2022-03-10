@@ -37,6 +37,7 @@ export default class StoreUserValidator {
       rules.maxLength(200),
       rules.regex(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
     ]),
+    role: schema.enum(['administrator', 'manager', 'investor'] as const),
   })
 
   /**
